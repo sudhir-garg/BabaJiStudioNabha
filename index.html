@@ -1,61 +1,280 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Your Name/Brand - Links</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Social Links | Connect With Me</title>
+    <meta name="description" content="Find all my social media profiles and ways to connect with me in one place">
+    <meta name="author" content="Your Name">
     
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <meta property="og:title" content="My Social Links | Connect With Me">
+    <meta property="og:description" content="Find all my social media profiles and ways to connect with me in one place">
+    <meta property="og:type" content="website">
     
-    <link href="style.css" rel="stylesheet">
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLMDJzL5u2pEw4J4FfL0M4t4bE4M4T1Vw1O1w5Ew5M5N5N5N5N5N5" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: #fafafa;
+            background-image: 
+                radial-gradient(circle at 20% 50%, rgba(120, 119, 198, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(120, 119, 198, 0.05) 0%, transparent 50%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+            color: #2d3748;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 512px;
+        }
+
+        .profile {
+            text-align: center;
+            margin-bottom: 40px;
+            animation: slideIn 0.5s ease-out;
+        }
+
+        .profile-img {
+            width: 112px;
+            height: 112px;
+            border-radius: 50%;
+            border: 4px solid #ffffff;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            margin-bottom: 24px;
+            object-fit: cover;
+        }
+
+        .profile h1 {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: #1a202c;
+        }
+
+        .profile p {
+            font-size: 18px;
+            color: #718096;
+        }
+
+        .links {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .link-wrapper {
+            border-radius: 16px;
+            padding: 1px;
+            animation: slideIn 0.5s ease-out;
+            animation-fill-mode: both;
+        }
+
+        /* Update link colors/delays for new links */
+        .link-wrapper:nth-child(1) { animation-delay: 0s; background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); } /* Instagram */
+        .link-wrapper:nth-child(2) { animation-delay: 0.05s; background: #25D366; } /* WhatsApp - NEW */
+        .link-wrapper:nth-child(3) { animation-delay: 0.1s; background: #4285F4; } /* Google Reviews - NEW */
+        .link-wrapper:nth-child(4) { animation-delay: 0.15s; background: #FF0000; } /* YouTube */
+        .link-wrapper:nth-child(5) { animation-delay: 0.2s; background: #1877F2; } /* Facebook */
+        .link-wrapper:nth-child(6) { animation-delay: 0.25s; background: #000000; } /* Twitter/X - Using black for X */
+        .link-wrapper:nth-child(7) { animation-delay: 0.3s; background: #6366F1; } /* Website */
+        .link-wrapper:nth-child(8) { animation-delay: 0.35s; background: #EA4335; } /* Email */
+
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 20px;
+            background: #ffffff;
+            border-radius: 16px;
+            text-decoration: none;
+            color: #2d3748;
+            transition: all 0.3s ease;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        .social-link:hover {
+            transform: scale(1.02) translateY(-4px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .icon-wrapper {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s ease;
+            flex-shrink: 0;
+        }
+
+        .social-link:hover .icon-wrapper {
+            transform: scale(1.1);
+        }
+
+        .icon-wrapper svg {
+            width: 24px;
+            height: 24px;
+            fill: white;
+        }
+        
+        /* Specific sizing for the Google Reviews text/star SVG */
+        .icon-wrapper.google-icon svg {
+             width: 40px; /* Make the icon wider to fit the text/stars */
+             height: 40px; 
+             fill: none; /* Reset fill as the icon has internal colors */
+        }
+
+        .link-title {
+            font-size: 18px;
+            font-weight: 500;
+            transition: transform 0.3s ease;
+        }
+
+        .social-link:hover .link-title {
+            transform: translateX(4px);
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            color: #718096;
+            font-size: 14px;
+            animation: slideIn 0.5s ease-out 0.4s both;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @media (max-width: 640px) {
+            .profile h1 {
+                font-size: 28px;
+            }
+            .profile p {
+                font-size: 16px;
+            }
+        }
+    </style>
 </head>
 <body>
+    <div class="container">
+        <div class="profile">
+            <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=300&h=300&fit=crop" alt="Profile" class="profile-img">
+            <h1>BabaJi Studio</h1>
+            <p>Your tagline or bio goes here ✨</p>
+        </div>
 
-    <div class="container my-5">
-        <div class="row justify-content-center">
-            <div class="col-lg-6 col-md-8 col-sm-10">
-                
-                <div class="text-center mb-5">
-                    <img src="your-profile-picture.jpg" alt="Your Profile Picture" class="profile-img shadow-lg mb-3">
-                    <h1 class="display-5 text-white">@YourAwesomeHandle</h1>
-                    <p class="lead text-white-50">Content creator | Designer | Cat enthusiast</p>
-                </div>
+        <div class="links">
+            <div class="link-wrapper">
+                <a href="https://www.instagram.com/babaji_studio?igsh=MWN6cnd0eHRybmQwbA==" target="_blank" rel="noopener noreferrer" class="social-link">
+                    <div class="icon-wrapper" style="background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);">
+                        <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                    </div>
+                    <span class="link-title">Instagram</span>
+                </a>
+            </div>
+            
+            <div class="link-wrapper">
+                <a href="https://wa.me/PHONENUMBER" target="_blank" rel="noopener noreferrer" class="social-link">
+                    <div class="icon-wrapper" style="background: #25D366;">
+                        <svg viewBox="0 0 24 24" stroke="none"><path d="M12.047 2C6.54 2 2.055 6.486 2.055 12c0 1.838.498 3.597 1.378 5.122L2.002 22l5.06-1.332A9.998 9.998 0 0 0 12.047 22c5.506 0 9.992-4.486 9.992-10S17.553 2 12.047 2zm5.074 15.654c-.11.265-.67.456-1.034.697-.336.216-.763.315-1.127.315-.365 0-.746-.109-.824-.265-.078-.157-.282-.693-.418-1.229-.136-.536-.71-1.096-.946-1.229-.235-.136-.45-.205-.678-.205-.183 0-.35.038-.532.22-.164.183-.62.66-.745.795-.125.136-.26.157-.487.051-.227-.105-.968-.35-1.843-1.137-.682-.625-1.139-1.397-1.275-1.62-.136-.223-.002-.345.122-.47l.278-.28c.112-.112.18-.266.248-.42.068-.154.034-.287-.015-.407-.05-.12-.45-.98-.62-1.39-.17-.41-.336-.342-.46-.353-.122-.01-.26-.008-.407-.008-.146 0-.38-.053-.586.26-.206.313-.79.76-.79 1.854 0 1.094.807 2.14 1.157 2.585.35.445 1.49 2.278 3.593 3.064 2.102.787 2.102.536 2.482.497.38-.038 1.23-.505 1.403-.98.17-.474.17-.878.12-.98z"/></svg>
+                    </div>
+                    <span class="link-title">WhatsApp Chat</span>
+                </a>
+            </div>
+            
+            <div class="link-wrapper">
+                <a href="GOOGLE_REVIEW_LINK" target="_blank" rel="noopener noreferrer" class="social-link">
+                    <div class="icon-wrapper google-icon" style="background: #4285F4;">
+                        <svg viewBox="0 0 200 45" xmlns="http://www.w3.org/2000/svg">
+                            <path fill="#FBBC05" d="M38.8 20.3c0-.6-.1-1.1-.2-1.6H31v3.1h4.4c-.2 1.2-.8 2.3-1.7 3v2.3h3.1c1.8-1.7 2.8-4.2 2.8-7.8z"/>
+                            <path fill="#4285F4" d="M31 39.4c2.2 0 4.2-.7 5.6-1.9l-3.1-2.3c-.8.5-1.9.8-2.6.8-2 0-3.7-1.3-4.3-3.1h-3.3v3.2c1 2.3 3.3 3.3 7.7 3.3z"/>
+                            <path fill="#EA4335" d="M26.7 23.3c-.3-1.2-.3-2.5 0-3.7v-3.2h-3.3v3.2c-.6 1.4-.6 3.1 0 4.5l3.3 3.2v-3.2z"/>
+                            <path fill="#34A853" d="M31 16.5c1.2 0 2.2.4 3 1.1l2.7-2.7c-1.7-1.5-3.9-2.4-5.7-2.4-4.4 0-6.7 1-7.7 3.3l3.3 3.2c.6-1.8 2.3-3.1 4.3-3.1z"/>
+                            
+                            <text x="45" y="24" font-family="Arial, sans-serif" font-size="18" fill="white" font-weight="bold">Reviews</text>
+                            
+                            <g transform="translate(45, 28) scale(0.6)">
+                                <path fill="#FFC107" d="M12 0L15.908 7.373L24 8.528L18 14.508L19.816 22.627L12 18.254L4.184 22.627L6 14.508L0 8.528L8.092 7.373L12 0Z"/>
+                                <path fill="#FFC107" d="M40 0L43.908 7.373L52 8.528L46 14.508L47.816 22.627L40 18.254L32.184 22.627L34 14.508L28 8.528L36.092 7.373L40 0Z"/>
+                                <path fill="#FFC107" d="M68 0L71.908 7.373L80 8.528L74 14.508L75.816 22.627L68 18.254L60.184 22.627L62 14.508L56 8.528L64.092 7.373L68 0Z"/>
+                                <path fill="#FFC107" d="M96 0L99.908 7.373L108 8.528L102 14.508L103.816 22.627L96 18.254L88.184 22.627L90 14.508L84 8.528L92.092 7.373L96 0Z"/>
+                                <path fill="#FFC107" d="M124 0L127.908 7.373L136 8.528L130 14.508L131.816 22.627L124 18.254L116.184 22.627L118 14.508L112 8.528L120.092 7.373L124 0Z"/>
+                            </g>
+                        </svg>
+                    </div>
+                    <span class="link-title">Google Reviews</span>
+                </a>
+            </div>
 
-                <div class="d-grid gap-3">
-                    
-                    <a href="https://www.instagram.com/[YOUR_USERNAME_OR_ID]" target="_blank" class="btn btn-primary btn-lg link-button">
-                        <i class="fab fa-instagram me-2"></i> Follow on Instagram
-                    </a>
+            <div class="link-wrapper">
+                <a href="https://youtube.com/@babajistudio4593?si=RqUfrCFGIxbUgGx8" target="_blank" rel="noopener noreferrer" class="social-link">
+                    <div class="icon-wrapper" style="background: #FF0000;">
+                        <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                    </div>
+                    <span class="link-title">YouTube</span>
+                </a>
+            </div>
 
-                    <a href="https://www.youtube.com/@/[YOUR_USERNAME_OR_ID]" target="_blank" class="btn btn-danger btn-lg link-button">
-                        <i class="fab fa-youtube me-2"></i> Subscribe on YouTube
-                    </a>
+            <div class="link-wrapper">
+                <a href="https://facebook.com/yourfacebookpage" target="_blank" rel="noopener noreferrer" class="social-link">
+                    <div class="icon-wrapper" style="background: #1877F2;">
+                        <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                    </div>
+                    <span class="link-title">Facebook</span>
+                </a>
+            </div>
 
-                    <a href="https://x.com/[YOUR_USERNAME_OR_ID]" target="_blank" class="btn btn-dark btn-lg link-button">
-                        <i class="fab fa-x-twitter me-2"></i> Follow on X
-                    </a>
+            <div class="link-wrapper">
+                <a href="https://twitter.com/yourusername" target="_blank" rel="noopener noreferrer" class="social-link">
+                    <div class="icon-wrapper" style="background: #000000;">
+                        <svg viewBox="0 0 24 24"><path d="M18.901 1.153h3.684l-8.02 9.77L24 22.847h-7.6l-5.83-7.24-6.85 7.24H1.05l8.47-9.38L0 1.153h7.7L12.33 7.8L18.9 1.153zm-1.12 18.89l5.05-5.31-5.96-7.3-3.6 4.37-3.6-4.37-6.02 7.3L5.8 20.043h-1.6L0 2.21l8.53 9.46 3.8-4.6 3.6 4.6 5.25-5.52h1.6L24 2.21l-8.48 9.2-3.8 4.6z"/></svg>
+                    </div>
+                    <span class="link-title">Twitter / X</span>
+                </a>
+            </div>
 
-                    <a href="https://www.tiktok.com/@/[YOUR_USERNAME_OR_ID]" target="_blank" class="btn btn-info btn-lg link-button tiktok-button">
-                        <i class="fab fa-tiktok me-2"></i> Check out my TikTok
-                    </a>
-                    
-                    <a href="https://www.linkedin.com/in/[YOUR_USERNAME_OR_ID]" target="_blank" class="btn btn-secondary btn-lg link-button linkedin-button">
-                        <i class="fab fa-linkedin me-2"></i> Connect on LinkedIn
-                    </a>
-                    
-                    <a href="https://[YOUR_CUSTOM_WEBSITE_URL]" target="_blank" class="btn btn-success btn-lg link-button">
-                        <i class="fas fa-globe me-2"></i> My Official Website
-                    </a>
-                    
-                </div>
-                
+
+            <div class="link-wrapper">
+                <a href="https://yourwebsite.com" target="_blank" rel="noopener noreferrer" class="social-link">
+                    <div class="icon-wrapper" style="background: #6366F1;">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                    </div>
+                    <span class="link-title">Website</span>
+                </a>
+            </div>
+
+            <div class="link-wrapper">
+                <a href="mailto:your@email.com" class="social-link">
+                    <div class="icon-wrapper" style="background: #EA4335;">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                    </div>
+                    <span class="link-title">Email Me</span>
+                </a>
             </div>
         </div>
-    </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+        <div class="footer">
+            <p>© 2025 Your Name. All rights reserved.</p>
+        </div>
+    </div>
 </body>
 </html>
