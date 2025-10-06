@@ -1,0 +1,49 @@
+body {
+    /* Dark background for a modern look */
+    background-color: #121212;
+    /* Full screen height and centering */
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-img {
+    width: 150px; /* Size of the profile picture */
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%; /* Makes it a circle */
+    border: 4px solid #0d6efd; /* A border matching Bootstrap's primary color */
+}
+
+/* Customizing the main link buttons */
+.link-button {
+    /* Ensures buttons are always centered and fill the width */
+    width: 100%;
+    text-align: center;
+    /* Make the button slightly rounded */
+    border-radius: 10px;
+    /* Give buttons some vertical padding */
+    padding: 15px 20px;
+    /* Smoother transition on hover */
+    transition: all 0.3s ease;
+    /* Remove default button shadow */
+    box-shadow: none !important;
+}
+
+.link-button:hover {
+    transform: translateY(-3px); /* Slight lift effect on hover */
+    opacity: 0.9;
+}
+
+/* Specific styling for TikTok to match its colors */
+.tiktok-button {
+    background-color: #000000;
+    color: #ffffff;
+    border: 1px solid #ffffff;
+}
+.tiktok-button:hover {
+    background-color: #ee1d52;
+    border-color: #ee1d52;
+    color: #ffffff;
+}
