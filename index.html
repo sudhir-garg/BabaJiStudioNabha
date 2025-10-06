@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Social Links | Connect With Me</title>
-    <meta name="description" content="Find all my social media profiles and ways to connect with me in one place">
-    <meta name="author" content="Your Name">
+    <title>BabaJi Studio | Connect With Me</title>
+    <meta name="description" content="Find all my social media profiles and ways to connect with BabaJi Studio in one place. Follow us on Instagram, WhatsApp, YouTube, and more!">
+    <meta name="author" content="BabaJi Studio">
     
-    <meta property="og:title" content="My Social Links | Connect With Me">
-    <meta property="og:description" content="Find all my social media profiles and ways to connect with me in one place">
+    <meta property="og:title" content="BabaJi Studio | Connect With Me">
+    <meta property="og:description" content="Find all my social media profiles and ways to connect with BabaJi Studio in one place">
     <meta property="og:type" content="website">
     
     <style>
@@ -40,7 +40,7 @@
         .profile {
             text-align: center;
             margin-bottom: 40px;
-            animation: slideIn 0.5s ease-out;
+            animation: fadeUp 0.6s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .profile-img {
@@ -48,7 +48,7 @@
             height: 112px;
             border-radius: 50%;
             border: 4px solid #ffffff;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
             margin-bottom: 24px;
             object-fit: cover;
         }
@@ -74,20 +74,47 @@
         .link-wrapper {
             border-radius: 16px;
             padding: 1px;
-            animation: slideIn 0.5s ease-out;
+            animation: slideIn 0.5s cubic-bezier(0.4, 0, 0.2, 1);
             animation-fill-mode: both;
         }
 
-        /* Update link colors/delays for new links */
-        .link-wrapper:nth-child(1) { animation-delay: 0s; background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); } /* Instagram */
-        .link-wrapper:nth-child(2) { animation-delay: 0.05s; background: #25D366; } /* WhatsApp - NEW */
-        .link-wrapper:nth-child(3) { animation-delay: 0.1s; background: #4285F4; } /* Google Reviews - NEW */
-        .link-wrapper:nth-child(4) { animation-delay: 0.15s; background: #FF0000; } /* YouTube */
-        .link-wrapper:nth-child(5) { animation-delay: 0.2s; background: #1877F2; } /* Facebook */
-        .link-wrapper:nth-child(6) { animation-delay: 0.25s; background: #000000; } /* Twitter/X - Using black for X */
-        .link-wrapper:nth-child(7) { animation-delay: 0.3s; background: #6366F1; } /* Website */
-        .link-wrapper:nth-child(8) { animation-delay: 0.35s; background: #EA4335; } /* Email */
-
+        .link-wrapper:nth-child(1) { 
+            animation-delay: 0s; 
+            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); 
+        }
+        .link-wrapper:nth-child(2) { 
+            animation-delay: 0.05s; 
+            background: #25D366; 
+        }
+        .link-wrapper:nth-child(3) { 
+            animation-delay: 0.1s; 
+            background: #ffffff;
+            padding: 2px;
+        }
+        .link-wrapper:nth-child(4) { 
+            animation-delay: 0.15s; 
+            background: #0077B5; 
+        }
+        .link-wrapper:nth-child(5) { 
+            animation-delay: 0.2s; 
+            background: #24292e; 
+        }
+        .link-wrapper:nth-child(6) { 
+            animation-delay: 0.25s; 
+            background: #FF0000; 
+        }
+        .link-wrapper:nth-child(7) { 
+            animation-delay: 0.3s; 
+            background: #1877F2; 
+        }
+        .link-wrapper:nth-child(8) { 
+            animation-delay: 0.35s; 
+            background: linear-gradient(135deg, #6366F1 0%, #9333EA 100%); 
+        }
+        .link-wrapper:nth-child(9) { 
+            animation-delay: 0.4s; 
+            background: #EA4335; 
+        }
 
         .social-link {
             display: flex;
@@ -98,13 +125,13 @@
             border-radius: 16px;
             text-decoration: none;
             color: #2d3748;
-            transition: all 0.3s ease;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             box-shadow: 0 1px 3px rgba(0,0,0,0.05);
         }
 
         .social-link:hover {
             transform: scale(1.02) translateY(-4px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.12);
         }
 
         .icon-wrapper {
@@ -125,14 +152,6 @@
         .icon-wrapper svg {
             width: 24px;
             height: 24px;
-            fill: white;
-        }
-        
-        /* Specific sizing for the Google Reviews text/star SVG */
-        .icon-wrapper.google-icon svg {
-             width: 40px; /* Make the icon wider to fit the text/stars */
-             height: 40px; 
-             fill: none; /* Reset fill as the icon has internal colors */
         }
 
         .link-title {
@@ -150,7 +169,7 @@
             margin-top: 40px;
             color: #718096;
             font-size: 14px;
-            animation: slideIn 0.5s ease-out 0.4s both;
+            animation: fadeUp 0.6s cubic-bezier(0.4, 0, 0.2, 1) 0.5s both;
         }
 
         @keyframes slideIn {
@@ -161,6 +180,17 @@
             to {
                 opacity: 1;
                 transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
             }
         }
 
@@ -176,104 +206,133 @@
 </head>
 <body>
     <div class="container">
+        <!-- Profile Section -->
         <div class="profile">
-            <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=300&h=300&fit=crop" alt="Profile" class="profile-img">
+            <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=300&h=300&fit=crop" alt="BabaJi Studio Profile" class="profile-img">
             <h1>BabaJi Studio</h1>
             <p>Your tagline or bio goes here ✨</p>
         </div>
 
+        <!-- Social Links -->
         <div class="links">
+            <!-- Instagram -->
             <div class="link-wrapper">
                 <a href="https://www.instagram.com/babaji_studio?igsh=MWN6cnd0eHRybmQwbA==" target="_blank" rel="noopener noreferrer" class="social-link">
-                    <div class="icon-wrapper" style="background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);">
-                        <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                    <div class="icon-wrapper" style="background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);">
+                        <svg viewBox="0 0 24 24" fill="white">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                        </svg>
                     </div>
                     <span class="link-title">Instagram</span>
                 </a>
             </div>
-            
+
+            <!-- WhatsApp -->
             <div class="link-wrapper">
-                <a href="https://wa.me/PHONENUMBER" target="_blank" rel="noopener noreferrer" class="social-link">
+                <a href="https://wa.me/YOUR_PHONE_NUMBER" target="_blank" rel="noopener noreferrer" class="social-link">
                     <div class="icon-wrapper" style="background: #25D366;">
-                        <svg viewBox="0 0 24 24" stroke="none"><path d="M12.047 2C6.54 2 2.055 6.486 2.055 12c0 1.838.498 3.597 1.378 5.122L2.002 22l5.06-1.332A9.998 9.998 0 0 0 12.047 22c5.506 0 9.992-4.486 9.992-10S17.553 2 12.047 2zm5.074 15.654c-.11.265-.67.456-1.034.697-.336.216-.763.315-1.127.315-.365 0-.746-.109-.824-.265-.078-.157-.282-.693-.418-1.229-.136-.536-.71-1.096-.946-1.229-.235-.136-.45-.205-.678-.205-.183 0-.35.038-.532.22-.164.183-.62.66-.745.795-.125.136-.26.157-.487.051-.227-.105-.968-.35-1.843-1.137-.682-.625-1.139-1.397-1.275-1.62-.136-.223-.002-.345.122-.47l.278-.28c.112-.112.18-.266.248-.42.068-.154.034-.287-.015-.407-.05-.12-.45-.98-.62-1.39-.17-.41-.336-.342-.46-.353-.122-.01-.26-.008-.407-.008-.146 0-.38-.053-.586.26-.206.313-.79.76-.79 1.854 0 1.094.807 2.14 1.157 2.585.35.445 1.49 2.278 3.593 3.064 2.102.787 2.102.536 2.482.497.38-.038 1.23-.505 1.403-.98.17-.474.17-.878.12-.98z"/></svg>
+                        <svg viewBox="0 0 24 24" fill="white">
+                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+                        </svg>
                     </div>
-                    <span class="link-title">WhatsApp Chat</span>
+                    <span class="link-title">WhatsApp</span>
                 </a>
             </div>
-            
+
+            <!-- Google Reviews -->
             <div class="link-wrapper">
-                <a href="GOOGLE_REVIEW_LINK" target="_blank" rel="noopener noreferrer" class="social-link">
-                    <div class="icon-wrapper google-icon" style="background: #4285F4;">
-                        <svg viewBox="0 0 200 45" xmlns="http://www.w3.org/2000/svg">
-                            <path fill="#FBBC05" d="M38.8 20.3c0-.6-.1-1.1-.2-1.6H31v3.1h4.4c-.2 1.2-.8 2.3-1.7 3v2.3h3.1c1.8-1.7 2.8-4.2 2.8-7.8z"/>
-                            <path fill="#4285F4" d="M31 39.4c2.2 0 4.2-.7 5.6-1.9l-3.1-2.3c-.8.5-1.9.8-2.6.8-2 0-3.7-1.3-4.3-3.1h-3.3v3.2c1 2.3 3.3 3.3 7.7 3.3z"/>
-                            <path fill="#EA4335" d="M26.7 23.3c-.3-1.2-.3-2.5 0-3.7v-3.2h-3.3v3.2c-.6 1.4-.6 3.1 0 4.5l3.3 3.2v-3.2z"/>
-                            <path fill="#34A853" d="M31 16.5c1.2 0 2.2.4 3 1.1l2.7-2.7c-1.7-1.5-3.9-2.4-5.7-2.4-4.4 0-6.7 1-7.7 3.3l3.3 3.2c.6-1.8 2.3-3.1 4.3-3.1z"/>
-                            
-                            <text x="45" y="24" font-family="Arial, sans-serif" font-size="18" fill="white" font-weight="bold">Reviews</text>
-                            
-                            <g transform="translate(45, 28) scale(0.6)">
-                                <path fill="#FFC107" d="M12 0L15.908 7.373L24 8.528L18 14.508L19.816 22.627L12 18.254L4.184 22.627L6 14.508L0 8.528L8.092 7.373L12 0Z"/>
-                                <path fill="#FFC107" d="M40 0L43.908 7.373L52 8.528L46 14.508L47.816 22.627L40 18.254L32.184 22.627L34 14.508L28 8.528L36.092 7.373L40 0Z"/>
-                                <path fill="#FFC107" d="M68 0L71.908 7.373L80 8.528L74 14.508L75.816 22.627L68 18.254L60.184 22.627L62 14.508L56 8.528L64.092 7.373L68 0Z"/>
-                                <path fill="#FFC107" d="M96 0L99.908 7.373L108 8.528L102 14.508L103.816 22.627L96 18.254L88.184 22.627L90 14.508L84 8.528L92.092 7.373L96 0Z"/>
-                                <path fill="#FFC107" d="M124 0L127.908 7.373L136 8.528L130 14.508L131.816 22.627L124 18.254L116.184 22.627L118 14.508L112 8.528L120.092 7.373L124 0Z"/>
-                            </g>
+                <a href="https://g.page/r/YOUR_GOOGLE_REVIEW_LINK/review" target="_blank" rel="noopener noreferrer" class="social-link">
+                    <div class="icon-wrapper" style="background: white; padding: 4px;">
+                        <svg viewBox="0 0 24 24">
+                            <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                            <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                            <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+                            <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
                         </svg>
                     </div>
                     <span class="link-title">Google Reviews</span>
                 </a>
             </div>
 
+            <!-- LinkedIn -->
+            <div class="link-wrapper">
+                <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer" class="social-link">
+                    <div class="icon-wrapper" style="background: #0077B5;">
+                        <svg viewBox="0 0 24 24" fill="white">
+                            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                        </svg>
+                    </div>
+                    <span class="link-title">LinkedIn</span>
+                </a>
+            </div>
+
+            <!-- GitHub -->
+            <div class="link-wrapper">
+                <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer" class="social-link">
+                    <div class="icon-wrapper" style="background: #24292e;">
+                        <svg viewBox="0 0 24 24" fill="white">
+                            <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
+                        </svg>
+                    </div>
+                    <span class="link-title">GitHub</span>
+                </a>
+            </div>
+
+            <!-- YouTube -->
             <div class="link-wrapper">
                 <a href="https://youtube.com/@babajistudio4593?si=RqUfrCFGIxbUgGx8" target="_blank" rel="noopener noreferrer" class="social-link">
                     <div class="icon-wrapper" style="background: #FF0000;">
-                        <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                        <svg viewBox="0 0 24 24" fill="white">
+                            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                        </svg>
                     </div>
                     <span class="link-title">YouTube</span>
                 </a>
             </div>
 
+            <!-- Facebook -->
             <div class="link-wrapper">
-                <a href="https://facebook.com/yourfacebookpage" target="_blank" rel="noopener noreferrer" class="social-link">
+                <a href="https://facebook.com/yourpage" target="_blank" rel="noopener noreferrer" class="social-link">
                     <div class="icon-wrapper" style="background: #1877F2;">
-                        <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                        <svg viewBox="0 0 24 24" fill="white">
+                            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                        </svg>
                     </div>
                     <span class="link-title">Facebook</span>
                 </a>
             </div>
 
-            <div class="link-wrapper">
-                <a href="https://twitter.com/yourusername" target="_blank" rel="noopener noreferrer" class="social-link">
-                    <div class="icon-wrapper" style="background: #000000;">
-                        <svg viewBox="0 0 24 24"><path d="M18.901 1.153h3.684l-8.02 9.77L24 22.847h-7.6l-5.83-7.24-6.85 7.24H1.05l8.47-9.38L0 1.153h7.7L12.33 7.8L18.9 1.153zm-1.12 18.89l5.05-5.31-5.96-7.3-3.6 4.37-3.6-4.37-6.02 7.3L5.8 20.043h-1.6L0 2.21l8.53 9.46 3.8-4.6 3.6 4.6 5.25-5.52h1.6L24 2.21l-8.48 9.2-3.8 4.6z"/></svg>
-                    </div>
-                    <span class="link-title">Twitter / X</span>
-                </a>
-            </div>
-
-
+            <!-- Website -->
             <div class="link-wrapper">
                 <a href="https://yourwebsite.com" target="_blank" rel="noopener noreferrer" class="social-link">
-                    <div class="icon-wrapper" style="background: #6366F1;">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                    <div class="icon-wrapper" style="background: linear-gradient(135deg, #6366F1 0%, #9333EA 100%);">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <line x1="2" y1="12" x2="22" y2="12"/>
+                            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                        </svg>
                     </div>
                     <span class="link-title">Website</span>
                 </a>
             </div>
 
+            <!-- Email -->
             <div class="link-wrapper">
                 <a href="mailto:your@email.com" class="social-link">
                     <div class="icon-wrapper" style="background: #EA4335;">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                            <polyline points="22,6 12,13 2,6"/>
+                        </svg>
                     </div>
                     <span class="link-title">Email Me</span>
                 </a>
             </div>
         </div>
 
+        <!-- Footer -->
         <div class="footer">
-            <p>© 2025 Your Name. All rights reserved.</p>
+            <p>© 2025 BabaJi Studio. All rights reserved.</p>
         </div>
     </div>
 </body>
