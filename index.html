@@ -74,6 +74,34 @@
             animation: slideIn 0.5s cubic-bezier(0.4, 0, 0.2, 1);
             animation-fill-mode: both;
         }
+        
+        .phone-link {
+            position: fixed;
+            top: 24px;
+            right: 24px;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #1a1a1a;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+            animation: fadeIn 0.6s ease-out;
+        }
+
+        .phone-link:hover {
+            color: #667eea;
+        }
+        
+        .tagline {
+            font-size: 1.5rem;
+            font-weight: 600;
+            background: blue;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
 
         .link-wrapper:nth-child(1) { 
             animation-delay: 0s; 
@@ -85,11 +113,10 @@
         }
         .link-wrapper:nth-child(3) { 
             animation-delay: 0.1s;
-            border-top: 2px solid #EA4335;
-            border-right: 2px solid #4285F4; /* Blue */ 
-            border-bottom: 2px solid #34A853; /* Green */ 
-            border-left: 2px solid #FBBC05; /* Yellow */
-            padding: 2px;
+  
+            background: #25D366;
+
+   
         }
         .link-wrapper:nth-child(4) { 
             animation-delay: 0.15s; 
@@ -108,14 +135,11 @@
             background: #1877F2; 
         }
         .link-wrapper:nth-child(8) { 
-            animation-delay: 0.35s; 
-            background: linear-gradient(135deg, #6366F1 0%, #9333EA 100%); 
+           animation-delay: 0.1s;
+  
+            background: #25D366;
         }
-        .link-wrapper:nth-child(9) { 
-            animation-delay: 0.4s; 
-            background: #EA4335; 
-        }
-
+       
         .social-link {
             display: flex;
             align-items: center;
@@ -193,24 +217,41 @@
                 transform: translateY(0);
             }
         }
-
-        @media (max-width: 640px) {
-            .profile h1 {
-                font-size: 28px;
+        
+         @media (max-width: 640px) {
+            h1 {
+                font-size: 2rem;
             }
-            .profile p {
-                font-size: 16px;
+            .tagline {
+                font-size: 1.25rem;
+            }
+            .phone-text-full {
+                display: none;
+            }
+        }
+
+        @media (min-width: 641px) {
+            .phone-text-mobile {
+                display: none;
             }
         }
     </style>
 </head>
 <body>
+    <a href="tel:+919872540196" class="phone-link">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+        </svg>
+        <span class="phone-text-full">+91 98725 40196</span>
+        <span class="phone-text-mobile">Call</span>
+    </a>
+    
     <div class="container">
         <!-- Profile Section -->
         <div class="profile">
             <img src="Babajilogo2.png?w=200&h=200&fit=crop" alt="BabaJi Studio Profile" class="profile-img">
             <h1>BabaJi Studio</h1>
-            <p>Turning Moments into Memories ! ✨</p>
+            <p class="tagline">Turning Moments into Memories! ✨</p>
         </div>
 
         <!-- Social Links -->
@@ -302,9 +343,22 @@
                             <polyline points="22,6 12,13 2,6"/>
                         </svg>
                     </div>
-                    <span class="link-title">Email Us</span>
+                    <span class="link-title">Email us</span>
                 </a>
             </div>
+            
+             <!-- Website -->
+            <div class="link-wrapper" >
+                <a href="https://maps.app.goo.gl/faBQwXqGZaJnSbec6?g_st=awb" target="https://maps.app.goo.gl/faBQwXqGZaJnSbec6?g_st=awb" rel="noopener noreferrer" class="social-link">
+                    <div class="icon-wrapper" style="background: white; padding: 4px;border-top: 2px solid #EA4335; /* Red */ border-right: 2px solid #4285F4; /* Blue */ border-bottom: 2px solid #34A853; /* Green */ border-left: 2px solid #FBBC05; /* Yellow */">
+                         <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAAE0UlEQVR4nO2YfUwbZRzHnyjGGLniJPtDY4zLEnW2galx6ECJc+weOmEL8+7m3P6wd6Jmk2V/LDHGjGVrBTKjDq5mClMzElxQN8buOjM2eW1BNsgM0cGWTZS9cX1l9Ar0Ws4cUCijtFfTKyXhm3yTJk2efD53v+eeXgFYylKWErOoDw6uVeu5Eo2Ba1TrrXc0euuo2mDlNQauX2PgzmsM3L6cL52rQaJFrR/cotZb/9AYrGK4ri1zdGM078VpvgkzujcuNDd4psz6uFrPnY0ELvWFUvt1zOhx4kaPGChm9NRhla5HFwR+VQn3vMZgvSUHPr3E6sBo/u9g+Jny/Xi5Oz2u8GkGu0Zt4Jxy4DV6zltA812h4T2BckTF6NNxgbe9A1XndHvq0vS3BTkCeYfdLRHgxak7cTUu42TH4fd2AopXthFdGQf+uRsOPueLoSZ58J7AnjiiKLwDg1kSfKA3iPzLr+/vvRkKPvOQ4wJO877oBHj/VprPUEzARqD1wQJSOTz3DvFJe28w/EultmsYzbujgccnx0jI+7H6W0XgnVjOChuO+u8VkGoloGvnXrZTgl9tsA1upt3lGO3Jyq8Ske2HxIfxck8mTvM/SFc4nMCm6vpmlCX9OaeoFTEXsGPoB6HgA7UR6FjZR0cbM0rtufOtgRv5PNzIj4aC31J5qRmylCgVZcii2AsQ8OfwAnDcSa6jIq2D0XzRvfBvHbndibKFvoAAZKlfFBBA/wwnMLT35TqxFtwfaZ3sYjEJN3oGpjfu164r8PSu4SB4ETJUb8wFbDhqnQ/e8X52h2BWVcpdC6P576Y2LQfrPu6fBT8hQLoUEIDekPA71vd4Wx8ZEcyIIQqBzzCaH9H+9HnPHPhJASHmAnYcHZojsHXDjbGGVM5nUYmCWVUldy3cyB/Nr6lpCwk/WZsSAn2z4dFh78nH+iT4SQHkX7ERJMnZA5uOmU6FgRchS15WQuBE0CPT56la2RmAD+quSOu8Wbf/Xci8Nx5BoCbmAjYC3R0QGNanN4WAFwWLalRoR/LnW+PAWaiFJp0nPDylzDngJNCnpJPYVZTZEgp+ZpRUfsGiOuZtS35VbFyeLF5cluI1J79mbVt++G3TtlsR4VnSD03UE0CJuHZnfSO0pnjDCYSq14y4i34t6IsEDyevvgkoFa9FtUYwq8ajgZfuyFcN6zrkwENJoF73ClAyghk5Ho0Acz69STY8Qx0HSkdsTVkmmJEBOfB9LU+2yoWHLHXzjRM7UkE8IrQjuZFGydGW2r3RpBuTBc9Q49BEauMCPy1hRirmgx9pSxkgTNsdsq8+Q1WAeEc0gQd9FuTSnCeOBbm780zB1ShGpwer3fNQ3AUmJDqSnxPMCB90kAkHG2CX7E3LkryWIVeBhYyvXfVhQKD2tzXTb1UyR4cEiRCfRXWyq3ml7MflVGtBouSv359N1bK66/JHh7q2vqEwBSRStExhBspSkR+bDCkoftr+30CG3CfjtP0UJGqyG4uTUIa6EAa++8WLhQ+ARA40kWkoS/lCzL0v57ROAxZDIEvWhBCoBosl6BlKPfH7ZubA8i/4gRVtUIaa/tcBZalmsNiCMmRRQGADS0Z82U/IzRwQWDSbNzjFxcX3oQx1Tqr0edaXS1kKSJj8B1PN2xbr8aR9AAAAAElFTkSuQmCC" alt="google-maps-new">
+                    </div>
+                    <span class="link-title">Locate us</span>
+                </a>
+            </div>
+            
+            
+            
         </div>
 
         <!-- Footer -->
